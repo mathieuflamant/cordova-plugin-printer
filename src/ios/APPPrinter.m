@@ -195,6 +195,7 @@
 - (void) presentPrintController:(UIPrintInteractionController*)controller
                        fromRect:(CGRect)rect
 {
+/*
     if(CDV_IsIPad()) {
         [controller presentFromRect:rect inView:self.webView animated:YES completionHandler:
          ^(UIPrintInteractionController *ctrl, BOOL ok, NSError *e) {
@@ -206,6 +207,7 @@
          }];
     }
     else {
+*/
         [controller presentAnimated:YES completionHandler:
          ^(UIPrintInteractionController *ctrl, BOOL ok, NSError *e) {
              CDVPluginResult* pluginResult =
@@ -214,7 +216,9 @@
              [self.commandDelegate sendPluginResult:pluginResult
                                          callbackId:_callbackId];
          }];
+/*
     }
+*/
 }
 
 /**
